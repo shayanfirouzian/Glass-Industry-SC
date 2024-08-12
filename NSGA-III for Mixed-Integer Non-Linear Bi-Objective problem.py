@@ -208,56 +208,56 @@ class MyProblem(ElementwiseProblem):
         h58 = sum(Q_jc[j, 42] for j in range(J)) - sum(Q_ck[42, k] for k in range(K))
         h59 = sum(Q_jc[j, 43] for j in range(J)) - sum(Q_ck[43, k] for k in range(K))
         h60 = sum(Q_jc[j, 44] for j in range(J)) - sum(Q_ck[44, k] for k in range(K))
-        h61 = sum(R_kc[0, c] for c in range(C)) - self.Lambda * float(B_k[0])
-        h62 = sum(R_kc[1, c] for c in range(C)) - self.Lambda * float(B_k[1])
-        h63 = sum(R_kc[2, c] for c in range(C)) - self.Lambda * float(B_k[2])
-        h64 = sum(R_kc[3, c] for c in range(C)) - self.Lambda * float(B_k[3])
-        h65 = sum(R_kc[4, c] for c in range(C)) - self.Lambda * float(B_k[4])
-        h66 = sum(R_kc[5, c] for c in range(C)) - self.Lambda * float(B_k[5])
-        h67 = sum(R_kc[6, c] for c in range(C)) - self.Lambda * float(B_k[6])
-        h68 = sum(R_kc[7, c] for c in range(C)) - self.Lambda * float(B_k[7])
-        h69 = sum(R_kc[8, c] for c in range(C)) - self.Lambda * float(B_k[8])
-        h70 = sum(R_kc[9, c] for c in range(C)) - self.Lambda * float(B_k[9])
-        h71 = sum(R_kc[10, c] for c in range(C)) - self.Lambda * float(B_k[10])
-        h72 = sum(R_kc[11, c] for c in range(C)) - self.Lambda * float(B_k[11])
-        h73 = sum(R_kc[12, c] for c in range(C)) - self.Lambda * float(B_k[12])
-        h74 = sum(R_kc[13, c] for c in range(C)) - self.Lambda * float(B_k[13])
-        h75 = sum(R_kc[14, c] for c in range(C)) - self.Lambda * float(B_k[14])
-        h76 = sum(R_kc[15, c] for c in range(C)) - self.Lambda * float(B_k[15])
-        h77 = sum(R_kc[16, c] for c in range(C)) - self.Lambda * float(B_k[16])
-        h78 = sum(R_kc[17, c] for c in range(C)) - self.Lambda * float(B_k[17])
-        h79 = sum(R_kc[18, c] for c in range(C)) - self.Lambda * float(B_k[18])
-        h80 = sum(R_kc[19, c] for c in range(C)) - self.Lambda * float(B_k[19])
-        h81 = sum(R_kc[20, c] for c in range(C)) - self.Lambda * float(B_k[20])
-        h82 = sum(R_kc[21, c] for c in range(C)) - self.Lambda * float(B_k[21])
-        h83 = sum(R_kc[22, c] for c in range(C)) - self.Lambda * float(B_k[22])
-        h84 = sum(R_kc[23, c] for c in range(C)) - self.Lambda * float(B_k[23])
-        h85 = sum(R_kc[24, c] for c in range(C)) - self.Lambda * float(B_k[24])
-        h86 = sum(R_kc[25, c] for c in range(C)) - self.Lambda * float(B_k[25])
-        h87 = sum(R_kc[26, c] for c in range(C)) - self.Lambda * float(B_k[26])
-        h88 = sum(R_kc[27, c] for c in range(C)) - self.Lambda * float(B_k[27])
-        h89 = sum(R_kc[28, c] for c in range(C)) - self.Lambda * float(B_k[28])
-        h90 = sum(R_kc[29, c] for c in range(C)) - self.Lambda * float(B_k[29])
-        h91 = sum(R_kc[30, c] for c in range(C)) - self.Lambda * float(B_k[30])
-        h92 = sum(R_kc[31, c] for c in range(C)) - self.Lambda * float(B_k[31])
-        h93 = sum(R_kc[32, c] for c in range(C)) - self.Lambda * float(B_k[32])
-        h94 = sum(R_kc[33, c] for c in range(C)) - self.Lambda * float(B_k[33])
-        h95 = sum(R_kc[34, c] for c in range(C)) - self.Lambda * float(B_k[34])
-        h96 = sum(R_kc[35, c] for c in range(C)) - self.Lambda * float(B_k[35])
-        h97 = sum(R_kc[36, c] for c in range(C)) - self.Lambda * float(B_k[36])
-        h98 = sum(R_kc[37, c] for c in range(C)) - self.Lambda * float(B_k[37])
-        h99 = sum(R_kc[38, c] for c in range(C)) - self.Lambda * float(B_k[38])
-        h100 = sum(R_kc[39, c] for c in range(C)) - self.Lambda * float(B_k[39])
-        h101 = sum(R_kc[40, c] for c in range(C)) - self.Lambda * float(B_k[40])
-        h102 = sum(R_kc[41, c] for c in range(C)) - self.Lambda * float(B_k[41])
-        h103 = sum(R_kc[42, c] for c in range(C)) - self.Lambda * float(B_k[42])
-        h104 = sum(R_kc[43, c] for c in range(C)) - self.Lambda * float(B_k[43])
-        h105 = sum(R_kc[44, c] for c in range(C)) - self.Lambda * float(B_k[44])
-        h106 = sum(R_kc[45, c] for c in range(C)) - self.Lambda * float(B_k[45])
-        h107 = sum(R_kc[46, c] for c in range(C)) - self.Lambda * float(B_k[46])
-        h108 = sum(R_kc[47, c] for c in range(C)) - self.Lambda * float(B_k[47])
-        h109 = sum(R_kc[48, c] for c in range(C)) - self.Lambda * float(B_k[48])
-        h110 = sum(R_kc[49, c] for c in range(C)) - self.Lambda * float(B_k[49])
+        h61 = sum(R_kc[0, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[0]))
+        h62 = sum(R_kc[1, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[1]))
+        h63 = sum(R_kc[2, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[2]))
+        h64 = sum(R_kc[3, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[3]))
+        h65 = sum(R_kc[4, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[4]))
+        h66 = sum(R_kc[5, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[5]))
+        h67 = sum(R_kc[6, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[6]))
+        h68 = sum(R_kc[7, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[7]))
+        h69 = sum(R_kc[8, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[8]))
+        h70 = sum(R_kc[9, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[9]))
+        h71 = sum(R_kc[10, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[10]))
+        h72 = sum(R_kc[11, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[11]))
+        h73 = sum(R_kc[12, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[12]))
+        h74 = sum(R_kc[13, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[13]))
+        h75 = sum(R_kc[14, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[14]))
+        h76 = sum(R_kc[15, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[15]))
+        h77 = sum(R_kc[16, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[16]))
+        h78 = sum(R_kc[17, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[17]))
+        h79 = sum(R_kc[18, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[18]))
+        h80 = sum(R_kc[19, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[19]))
+        h81 = sum(R_kc[20, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[20]))
+        h82 = sum(R_kc[21, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[21]))
+        h83 = sum(R_kc[22, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[22]))
+        h84 = sum(R_kc[23, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[23]))
+        h85 = sum(R_kc[24, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[24]))
+        h86 = sum(R_kc[25, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[25]))
+        h87 = sum(R_kc[26, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[26]))
+        h88 = sum(R_kc[27, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[27]))
+        h89 = sum(R_kc[28, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[28]))
+        h90 = sum(R_kc[29, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[29]))
+        h91 = sum(R_kc[30, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[30]))
+        h92 = sum(R_kc[31, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[31]))
+        h93 = sum(R_kc[32, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[32]))
+        h94 = sum(R_kc[33, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[33]))
+        h95 = sum(R_kc[34, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[34]))
+        h96 = sum(R_kc[35, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[35]))
+        h97 = sum(R_kc[36, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[36]))
+        h98 = sum(R_kc[37, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[37]))
+        h99 = sum(R_kc[38, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[38]))
+        h100 = sum(R_kc[39, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[39]))
+        h101 = sum(R_kc[40, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[40]))
+        h102 = sum(R_kc[41, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[41]))
+        h103 = sum(R_kc[42, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[42]))
+        h104 = sum(R_kc[43, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[43]))
+        h105 = sum(R_kc[44, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[44]))
+        h106 = sum(R_kc[45, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[45]))
+        h107 = sum(R_kc[46, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[46]))
+        h108 = sum(R_kc[47, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[47]))
+        h109 = sum(R_kc[48, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[48]))
+        h110 = sum(R_kc[49, c] for c in range(C)) - self.Lambda * int(np.squeeze(B_k[49]))
         h111 = sum(S_cj[0, j] for j in range(J)) - (1 - self.gamma) * sum(R_kc[k, 0] for k in range(K))
         h112 = sum(S_cj[1, j] for j in range(J)) - (1 - self.gamma) * sum(R_kc[k, 1] for k in range(K))
         h113 = sum(S_cj[2, j] for j in range(J)) - (1 - self.gamma) * sum(R_kc[k, 2] for k in range(K))
@@ -489,15 +489,12 @@ d_dc = d_cd.T
 
 # Generating Arbitrary Data
 N = 2
-price=100000
-product=1000
 L_j = np.random.uniform(700000, 1000000, (J, 1))
 L_c = np.random.uniform(700000, 1000000, (C, 1))
 C_ni = np.random.uniform(50, 150, (N, I)) # Purchase cost
 a_j = np.random.uniform(500, 1500, (J, 1)) # Production capacity
 a_c = np.random.uniform(500, 1500, (C, 1)) # Input capacity
 a_d = np.random.uniform(500, 1500, (D, 1)) # Capacity of disposal
-a_k = np.random.uniform(500, 1500, (K, 1)) # Base demand
 theta = 0.5
 beta = 0.5
 gamma = 0.5
@@ -508,33 +505,19 @@ PCE_j = np.random.uniform(0.005, 0.01, (J, 1)) # Carbon emission of production
 PCEbar_j = np.random.uniform(0.005, 0.01, (J, 1)) # Carbon emission of recycling
 IN_k = np.random.uniform(150, 250, (K, 1)) # Cost of inventory
 z_k = np.random.uniform(250, 350, (K, 1)) # Cost of lost sale
-'''PROBLEM HERE!
-kappa_k = 1.02'''
-kappa_k = 0
+kappa_k = 1.02
 E_j = np.random.uniform(35000000, 50000000, (J, 1))
 ECN_j = np.random.uniform(0.5, 1, (J, 1))
 baseline = 14000
 M = 1E+18
 #________________________________
-'''L_j = np.full((J, 1), 1) # Cost of establishing
-L_c = np.full((C, 1), 0.5) # Cost of establishing
-C_ni = np.full((N, I), 0) # Purchase cost
-a_j = np.full((J, 1),0)
-a_c = np.full((C, 1),0)
-a_d = np.full((D, 1),0)
-a_k = np.full((K, 1),0)
-P_j = np.full((J, 1), 0) # Cost of forward-flow production
-Pbar_j = np.full((J, 1), 0) # Recycling cost per unit
-PCE_j = np.full((J, 1), 0) # Carbon emission of production
-PCEbar_j = np.full((J, 1), 0) # Carbon emission of recycling
-IN_k = np.full((K, 1), 0) # Cost of inventory
-z_k = np.full((K, 1), 0) # Cost of lost sale
-E_j = np.full((J, 1), 0)
-ECN_j = np.full((J, 1), 0)'''
-TCM = 0
-TCP = 0
-TCEM = 0
-TCEP = 0
+eps = 1E-6
+
+a_k = np.full((K, 1), eps) # Base demand
+TCM = eps
+TCP = eps
+TCEM = eps
+TCEP = eps
 #________________________________
 
 # Creating problem instance
@@ -548,15 +531,6 @@ from pymoo.optimize import minimize
 from pymoo.util.ref_dirs import get_reference_directions
 ref_dirs = get_reference_directions("das-dennis", 2, n_partitions=12)
 
-'''from pymoo.algorithms.moo.nsga2 import RankAndCrowdingSurvival
-algorithm = MixedVariableGA(pop_size=100, survival=RankAndCrowdingSurvival())
-
-res = minimize(problem,
-               algorithm,
-#               termination=('n_gen', 11),
-               seed=42,
-               return_least_infeasible=True,
-               verbose=True)'''
 algorithm = MixedVariableGA(pop_size=200, survival=ReferenceDirectionSurvival(ref_dirs))
 
 res = minimize(problem,
