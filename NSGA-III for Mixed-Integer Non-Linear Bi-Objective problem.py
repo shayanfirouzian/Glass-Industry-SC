@@ -1,4 +1,3 @@
-# !pip install pymoo
 import numpy as np
 from pymoo.core.problem import ElementwiseProblem
 import pandas as pd
@@ -83,15 +82,12 @@ class MyProblem(ElementwiseProblem):
             w.append(wi)
 
         # Decision Variables
-
         Pr_k = np.array(w[:K]).reshape(K, 1)
         IB_j = np.array(w[K:K+J]).reshape(J, 1)
         PF = np.array(w[K+J:K+J+1])
         MS_j = np.array(w[K+J+1:K+J+1+J]).reshape(J, 1)
 
-
         CRM_ni = np.array(x[:N*I]).reshape(N, I)
-
 
         R_kc = np.array(y[:K*C]).reshape(K, C)
         S_cj = np.array(y[K*C:K*C+C*J]).reshape(C, J)
@@ -100,13 +96,12 @@ class MyProblem(ElementwiseProblem):
         Q_jc = np.array(y[K*C+C*J+C*D+N*I*J:K*C+C*J+C*D+N*I*J+J*C]).reshape(J, C)
         Q_ck = np.array(y[K*C+C*J+C*D+N*I*J+J*C:K*C+C*J+C*D+N*I*J+J*C+C*K]).reshape(C, K)
 
-
         X_j = np.array(z[:J]).reshape(J, 1)
         X_c = np.array(z[J:J+C]).reshape(C, 1)
         Y_j = np.array(z[J+C:J+C+J]).reshape(J, 1)
 
         # Equations
-        carbon = (sum(d_ij[i, j] * Q_nij[n, i, j] * TCEM for n in range(N) for i in range(I) for j in range(J)) +
+        carbon = (sum(d_ij[i, j] * Q_nij[n, i, j] * self.TCEM for n in range(N) for i in range(I) for j in range(J)) +
         sum(Q_jc[j, c] * (1 - Y_j[j] * self.ECN_j[j]) * self.PCE_j[j] for j in range(J) for c in range(C)) +
         sum(S_cj[c, j] * (1 - Y_j[j] * self.ECN_j[j]) * PCEbar_j[j] for j in range(J) for c in range(C)) +
         sum(Q_jc[j, c] * self.d_jc[j, c] * self.TCEP for j in range(J) for c in range(C)) +
@@ -510,37 +505,38 @@ E_j = np.random.uniform(35000000, 50000000, (J, 1))
 ECN_j = np.random.uniform(0.5, 1, (J, 1))
 baseline = 14000
 M = 1E+18
+TCM = 1
+TCP = 1
+TCEM = 0.1
+TCEP = 0.1
 #________________________________
-eps = 1E-6
-
+eps = 1E-4
 a_k = np.full((K, 1), eps) # Base demand
-TCM = eps
-TCP = eps
-TCEM = eps
-TCEP = eps
 #________________________________
 
 # Creating problem instance
 problem = MyProblem(I, J, C, K, D, N, L_j, L_c, d_ij, d_jc, d_ck, d_cd, d_ji, d_cj, d_kc, d_dc, C_ni, a_j, a_c, a_d, a_k, theta, beta, gamma, Lambda, P_j, Pbar_j, PCE_j, PCEbar_j, TCM, TCP, TCEM, TCEP, IN_k, z_k, kappa_k, E_j, ECN_j, baseline, M)
 
-from pymoo.visualization.scatter import Scatter
-from pymoo.algorithms.moo.nsga3 import ReferenceDirectionSurvival
 from pymoo.core.mixed import MixedVariableGA
 from pymoo.optimize import minimize
 
+'''from pymoo.algorithms.moo.nsga2 import RankAndCrowdingSurvival
+algorithm = MixedVariableGA(pop_size=100, survival=RankAndCrowdingSurvival())'''
+
+from pymoo.algorithms.moo.nsga3 import ReferenceDirectionSurvival
 from pymoo.util.ref_dirs import get_reference_directions
 ref_dirs = get_reference_directions("das-dennis", 2, n_partitions=12)
-
 algorithm = MixedVariableGA(pop_size=200, survival=ReferenceDirectionSurvival(ref_dirs))
 
 res = minimize(problem,
                algorithm,
-               ('n_gen', 20),
+               ('n_gen', 15),
                seed=42,
                return_least_infeasible=True,
                verbose=True)
 
 # print("Best solution found: \nX = %s\nF = %s" % (res.X, res.F))
+from pymoo.visualization.scatter import Scatter
 plot = Scatter()
 plot.add(problem.pareto_front(), plot_type="line", color="black", alpha=0.7)
 plot.add(res.F, facecolor="red", edgecolor="none")
